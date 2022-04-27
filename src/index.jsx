@@ -10,9 +10,7 @@ import {Provider} from "react-redux";
 const AppWrapper = () => {
     return <React.StrictMode>
         <Provider store={store}>
-        <App
-            store={store}
-        />
+        <App store={store}/>
         </Provider>
     </React.StrictMode>
 }
