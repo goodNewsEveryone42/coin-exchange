@@ -11,4 +11,4 @@ export const GET_COIN = 'coin';
 // intranet
 
 // oauth  //register  // confirm
-// oauth/register
+// oauth/register 

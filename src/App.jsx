@@ -15,16 +15,16 @@ function App(props) {
 
     useEffect(() => {
         dispatch(fetchPhoto());
-    }, [dispatch]);
-
+      }, [dispatch]);
+    
     return (
-        <div className="App">
-            <Router>
-                <Routes>
-                    <Route path='/' element={<Main/>}/>
-                </Routes>
-            </Router>
-        </div>
+            <div className="App">
+                <Router>
+                    <Routes>
+                        <Route path='/' element={<Main/>}/>
+                    </Routes>
+                </Router>
+            </div>
     );
 }
 
