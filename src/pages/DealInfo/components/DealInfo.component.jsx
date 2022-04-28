@@ -10,7 +10,7 @@ const DealInfoComponent = props => {
         handleSubmit();
     }}>
         <FormItem>
-            <Title level={"2"}>{deal?.type} коинов у пользователя <b className={"NameUserDeal"}>{deal?.name}</b></Title>
+            <Title level={"2"}>{deal?.type === "buy"? "Покупка": "Продажа"} коинов у пользователя <b className={"NameUserDeal"}>{deal?.name}</b></Title>
         </FormItem>
         <FormItem>
             <Title level={"4"}>Условия сделки</Title>

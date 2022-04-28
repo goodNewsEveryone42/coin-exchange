@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card, FormItem, Input, Select, Title} from "@vkontakte/vkui";
 import DealInfoComponent from "./components/DealInfo.component";
 import {useSelector} from "react-redux";
+import DealStartComponent from "./components/DealStart.component";
 
 const DealInfoContainer = props => {
     const [data, setData] = useState({
@@ -11,12 +12,8 @@ const DealInfoContainer = props => {
     })
     const [resultPrice, setResultPrice] = useState(0);
     //const user = useSelector(state => state.user);
-    /*const deal = useSelector(state => state.deal);*/
-    const deal = {
-        phone: "893493943",
-        type: "Покупка",
-        name: "Олег"
-    }
+    const deal = useSelector(state => state.deal);
+
     const handleSubmit = () => {
         console.log(data)
     }
@@ -29,6 +26,13 @@ const DealInfoContainer = props => {
         setData({...data, [name]: value});
     }
 
+    if(deal?.start) {
+        return <div className='create-order'>
+            <Card>
+                <DealStartComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}  resultPrice={resultPrice} deal={deal} data={data}/>
+            </Card>
+        </div>
+    }
 
     return <div className='create-order'>
         <Card>
