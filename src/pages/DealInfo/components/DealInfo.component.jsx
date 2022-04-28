@@ -3,14 +3,14 @@ import {Button, FormItem, Input, Text, Title} from "@vkontakte/vkui";
 import "../style.scss"
 
 const DealInfoComponent = props => {
-    const {handleChangeData, handleSubmit, resultPrice, user} = props;
+    const {handleChangeData, handleSubmit, resultPrice, deal} = props;
 
     return <form onSubmit={e => {
         e.preventDefault();
         handleSubmit();
     }}>
         <FormItem>
-            <Title level={"2"}>Купить коины у пользователя</Title>
+            <Title level={"2"}>{deal?.type} коинов у пользователя {deal?.name}</Title>
         </FormItem>
         <FormItem>
             <Title level={"4"}>Условия сделки</Title>
@@ -31,7 +31,7 @@ const DealInfoComponent = props => {
             <Text weight={"regular"}>Сумма для перевода: {resultPrice}</Text>
         </FormItem>
         <FormItem>
-            <Text weight={"regular"}>Номер телефона для перевода: {user?.phone}</Text>
+            <Text weight={"regular"}>Номер телефона для перевода: {deal?.phone}</Text>
         </FormItem>
         <FormItem>
             <Button stretched={true} size={'l'} type='submit'>Начать сделку</Button>

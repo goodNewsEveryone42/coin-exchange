@@ -10,8 +10,13 @@ const DealInfoContainer = props => {
         price: 0
     })
     const [resultPrice, setResultPrice] = useState(0);
-    const user = useSelector(state => state.user);
-
+    //const user = useSelector(state => state.user);
+    /*const deal = useSelector(state => state.deal);*/
+    const deal = {
+        phone: "893493943",
+        type: "Покупка",
+        name: "Олег"
+    }
     const handleSubmit = () => {
         console.log(data)
     }
@@ -27,7 +32,7 @@ const DealInfoContainer = props => {
 
     return <div className='create-order'>
         <Card>
-            <DealInfoComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}  resultPrice={resultPrice} user={user} data={data}/>
+            <DealInfoComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}  resultPrice={resultPrice} deal={deal} data={data}/>
         </Card>
     </div>
 }
