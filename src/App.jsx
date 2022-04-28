@@ -4,8 +4,10 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {useSelector, useDispatch} from "react-redux";
 import { fetchPhoto } from './modulesStore/actions/getPgoto';
 import React,  { useState, useEffect } from 'react';
+import "@vkontakte/vkui/dist/vkui.css";
 
 import Main from "./pages/Main/Main.container";
+import RouteTabs from "./components/RouteTabs";
 
 function App(props) {
     // const {store} = props;
@@ -16,10 +18,11 @@ function App(props) {
     useEffect(() => {
         dispatch(fetchPhoto());
       }, [dispatch]);
-    
+
     return (
             <div className="App">
                 <Router>
+                    {!user?.name ? <RouteTabs/> : null}
                     <Routes>
                         <Route path='/' element={<Main/>}/>
                     </Routes>
