@@ -19,6 +19,7 @@ import "@vkontakte/vkui/dist/vkui.css";
 import Main from "./pages/Main/Main.container";
 import RouteTabs from "./components/RouteTabs";
 import CreateOrderContainer from "./pages/CreateOrder/CreateOrder.container";
+import DealInfoContainer from "./pages/DealInfo/DealInfo.container";
 
 function App(props) {
     // const {store} = props;
@@ -41,6 +42,7 @@ function App(props) {
                         <Routes>
                             <Route path='/' element={<Main/>}/>
                             <Route path='/create' element={<CreateOrderContainer/>}/>
+                            <Route path='/deal' element={<DealInfoContainer/>}/>
                         </Routes>
                     </Router>
                 </SplitCol>

@@ -8,18 +8,18 @@ const SuccessComponent = props => {
     const history = useNavigate();
 
     return <div className={"successOrderWrap"}>
-            <Icon56MoneyTransferOutline fill={"#5c9ce6"}/>
+        <Icon56MoneyTransferOutline fill={"#5c9ce6"}/>
         <Text weight="medium">
             Спасибо! Ваше объявление будет опубликовано в течении суток
         </Text>
-        <Button
-            onClick={() => {
-                handleClear();
-            }}
-            size={"l"}
-        >
-            {"Создать ещё одно объявление"}
-        </Button>
+        {/*<Button*/}
+        {/*    onClick={() => {*/}
+        {/*        handleClear();*/}
+        {/*    }}*/}
+        {/*    size={"l"}*/}
+        {/*>*/}
+        {/*    {"Создать ещё одно объявление"}*/}
+        {/*</Button>*/}
         <Button
             onClick={() => {
                 history('/');
