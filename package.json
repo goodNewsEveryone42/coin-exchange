@@ -2,6 +2,7 @@
   "name": "coin-exchange-v2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://goodNewsEveryone42.github.io/coin-exchange",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -21,9 +22,12 @@
     "react-table": "^7.7.0",
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "gh-pages": "^3.2.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
