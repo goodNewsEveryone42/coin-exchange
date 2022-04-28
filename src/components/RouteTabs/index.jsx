@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {Tabs, TabsItem} from "@vkontakte/vkui";
+import {Tabs, TabsItem, Button} from "@vkontakte/vkui";
+import { Icon24Add } from '@vkontakte/icons';
 import {useNavigate} from "react-router-dom";
+import "./style.scss";
 
 const RouteTabs = props => {
     const history = useNavigate();
 
-    return <>
+    return <div className={"tabsWrap"}>
         <Tabs>
             <TabsItem
                 onClick={() => {
@@ -32,7 +34,16 @@ const RouteTabs = props => {
                 Мои сделки
             </TabsItem>
         </Tabs>
-    </>
+        <Button
+            onClick={() => {
+                history('/create');
+            }}
+            before={<Icon24Add />}
+            size={"l"}
+        >
+            {"Создать обьявление"}
+        </Button>
+    </div>
 }
 
 export default RouteTabs;
