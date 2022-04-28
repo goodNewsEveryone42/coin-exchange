@@ -1,15 +1,15 @@
 import React from 'react';
-import {Card, Title, Text, Button} from "@vkontakte/vkui";
+import {Card, Title, Text, CellButton} from "@vkontakte/vkui";
 
 const TableCellAction = (props) => {
     const { nameAction } = props;
     return (
-        <Button
+        <CellButton
          stretched={ true }
          size={'s'}
          onClick={ e => {} }>
              { nameAction }
-        </Button>
+        </CellButton>
     )
 }
 
