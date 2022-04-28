@@ -1,5 +1,4 @@
 import React from 'react';
-import {Card, Title, Text, Button} from "@vkontakte/vkui";
 import TableCellData from './components/TableCellData';
 import TableCellUser from './components/TableCellUser';
 import TableCellString from './components/TableCellString';
@@ -12,8 +11,6 @@ const TableCell = (props) => {
         TableCellData: TableCellData,
         TableCellAction: TableCellAction
       };
-
-    console.log(props);
 
     return (
         <div className='tableCell'>

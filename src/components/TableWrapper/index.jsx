@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import Table from '../TableComponent/Table.component';
-import TableNameColumn from "../TableComponent/TableNameColumn";
-import TableDateAdvtColumn from "../TableComponent/TableDateAdvtColumn";
-import TableCountCoinColumn from "../TableComponent/TableCountCoinColumn";
-
+import TableHeader from "../TableComponent/TableHeader.component";
 import TableCell from "../TableComponent/TableCell.component";
 
 const TableWrapper = (props) => {
     const tableData = useSelector((state) => state.tableData.data);
-    console.log(tableData)
+
     const tableDataCell = tableData.map(item => {
         return {
             user: TableCell({component: 'TableCellUser', data: {userName: item.userName}}),
@@ -27,23 +23,23 @@ const TableWrapper = (props) => {
     const columns = React.useMemo(
         () => [
             {
-              Header: () => TableNameColumn({title: 'Автор объявления'}),
-              accessor: 'user', // accessor is the "key" in the data
+              Header: () => TableHeader({component: 'TableHeaderText', data: {title: 'Автор объявления'}}),
+              accessor: 'user',
             },
             {
-              Header: () => TableDateAdvtColumn(),
+              Header: () => TableHeader({component: 'TableHeaderFilter', data: {title: 'Дата'}}),
               accessor: 'data',
             },
             {
-              Header: () => TableCountCoinColumn(),
+              Header: () => TableHeader({component: 'TableHeaderFilter', data: {title: 'Количество(койнов)'}}),
               accessor: 'countCoin',
             },
             {
-              Header: () => TableNameColumn({title: 'Курс(рублей)'}),
+              Header: () => TableHeader({component: 'TableHeaderText', data: {title: 'Курс(рублей)'}}),
               accessor: 'rate',
             },
             {
-                Header: () => TableNameColumn({title: 'Действие'}),
+                Header: () => TableHeader({component: 'TableHeaderText', data: {title: 'Действие'}}),
                 accessor: 'action',
               },
           ],
