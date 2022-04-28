@@ -1,0 +1,32 @@
+.table {
+    width: 815px;
+    border: 1px solid #D4D4D4;
+    border-radius: 20px;
+}
+
+.tableRow {
+    text-align: left;
+    padding-left: 35px;
+    padding-top: 25px;
+    height: 48px;
+}
+
+td, th {
+    border-bottom: 1px solid #D4D4D4;
+}
+
+td:first-child {
+    padding-left: 35px;
+}
+
+th:first-child {
+    padding-left: 35px;
+}
+
+.table tr:last-child td:first-child {
+    border-bottom-left-radius: 16px;
+}
+
+.table tr:last-child td:last-child {
+    border-bottom-right-radius: 16px;
+}
