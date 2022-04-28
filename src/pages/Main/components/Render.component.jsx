@@ -1,9 +1,10 @@
 import React from 'react';
+import TableWrapper from '../../../components/TableWrapper';
 
 const RenderComponent = props => {
-    return <>
-        Тут будет что то важное
-    </>
+    return (
+        <TableWrapper />
+    )
 }
 
 export default RenderComponent;

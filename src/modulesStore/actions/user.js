@@ -1,8 +1,8 @@
-import {httpTest} from '../../axiosService/axios';
+import { httpServer } from '../../axiosService/axios';
 
 export function getUser() {
     return (dispatch) => {
-        httpTest.get().then(({data}) => {
+        httpServer.get().then(({data}) => {
             localStorage.setItem('userCoins', JSON.stringify(data));
             dispatch({type: "ADD_USER", payload: data});
         });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTable } from 'react-table';
-import styles from "../TableComponent/TableComponent.module.css";
+import styles from '../TableComponent/Table.module.scss';
 
 const Table = ({ columns, data }) => {
     const {
@@ -15,7 +15,7 @@ const Table = ({ columns, data }) => {
       });
 
       return (
-        <table cellspacing="0" className={styles.table} {...getTableProps()}>
+        <table cellSpacing='0' className={styles.table} {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
               <tr className={styles.tableRow} {...headerGroup.getHeaderGroupProps()}>

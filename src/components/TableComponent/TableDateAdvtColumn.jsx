@@ -3,7 +3,7 @@ import React from 'react';
 const TableDateAdvtColumn = (props) => {
 
     return (
-        <div>Дата объявления</div>
+        <div>Дата</div>
     )
 }
 
