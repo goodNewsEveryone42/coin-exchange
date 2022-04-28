@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, FormItem, Input, Select, Title} from "@vkontakte/vkui";
 import {getUserMock} from "../../../modulesStore/actions/user";
+import "../style.scss";
 
 const FormComponent = props => {
     const {handleChangeData, handleSubmit} = props;

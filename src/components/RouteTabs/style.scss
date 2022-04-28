@@ -1,0 +1,16 @@
+.tabsWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  .Tabs {
+    width: 100%;
+    margin-right: 200px;
+  }
+  .Button {
+    margin-right: 50px;
+    max-width: 250px;
+    width: 100%;
+  }
+}
