@@ -1,9 +1,9 @@
 import React from "react";
-import Table from '../../components/Table/Table';
-import TableUserColumn from "../../components/Table/TableUserNameColumn";
-import TableDateAdvtColumn from "../../components/Table/TableDateAdvtColumn";
-import TableCountCoinColumn from "../../components/Table/TableCountCoinColumn"; 
-import TableRateCoinColumn from "../../components/Table/TableRateCoinColumn";
+import Table from '../../components/TableComponent/TableComponent';
+import TableUserColumn from "../../components/TableComponent/TableUserNameColumn";
+import TableDateAdvtColumn from "../../components/TableComponent/TableDateAdvtColumn";
+import TableCountCoinColumn from "../../components/TableComponent/TableCountCoinColumn"; 
+import TableRateCoinColumn from "../../components/TableComponent/TableRateCoinColumn";
 
 const Main = (props) => {
     const data = React.useMemo(
