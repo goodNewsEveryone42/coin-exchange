@@ -1,4 +1,4 @@
-const initialState = {"name": "Name"};
+const initialState = {"name": "Name", phone: "89108278761"};
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {

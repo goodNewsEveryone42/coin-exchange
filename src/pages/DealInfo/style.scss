@@ -1,0 +1,9 @@
+.inputField {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  width: 100%;
+  .FormItem {
+    width: 100%;
+  }
+}
