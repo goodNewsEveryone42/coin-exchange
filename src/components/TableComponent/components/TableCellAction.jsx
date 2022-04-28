@@ -5,9 +5,9 @@ const TableCellAction = (props) => {
     const { nameAction } = props;
     return (
         <Button
-         stretched={true}
+         stretched={ true }
          size={'s'}
-         onClick={e => {}}>
+         onClick={ e => {} }>
              { nameAction }
         </Button>
     )

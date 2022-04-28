@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Title, Text, Button} from "@vkontakte/vkui";
 
-const TableNameColumn = (props) => {
+const TableHeaderText = (props) => {
     const { title } = props;
 
     return (
@@ -9,4 +9,4 @@ const TableNameColumn = (props) => {
     )
 }
 
-export default TableNameColumn;
+export default TableHeaderText;
