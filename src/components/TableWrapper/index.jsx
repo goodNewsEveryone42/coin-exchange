@@ -22,7 +22,7 @@ const TableWrapper = (props) => {
             data: TableCell({component: 'TableCellData', data: {dataOpen: item.createDate}}),
             countCoin: TableCell({component: 'TableCellString', data: {countCoin: item.countCoin}}),
             rate: TableCell({component: 'TableCellString', data: {rate: item.rate}}),
-            action: TableCell({component: 'TableCellAction', data: {nameAction: actionTitle[type]}})
+            action: TableCell({component: 'TableCellAction', data: {nameAction: actionTitle[type], type: type}})
         }
     });
     const data = React.useMemo(
@@ -36,11 +36,11 @@ const TableWrapper = (props) => {
               accessor: 'user',
             },
             {
-              Header: () => TableHeader({component: 'TableHeaderFilter', data: {title: 'Дата'}}),
+              Header: () => TableHeader({component: 'TableHeaderText', data: {title: 'Дата'}}),
               accessor: 'data',
             },
             {
-              Header: () => TableHeader({component: 'TableHeaderFilter', data: {title: 'Количество(коинов)'}}),
+              Header: () => TableHeader({component: 'TableHeaderText', data: {title: 'Количество(коинов)'}}),
               accessor: 'countCoin',
             },
             {
