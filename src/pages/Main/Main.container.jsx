@@ -1,67 +1,24 @@
-import React from "react";
-import Table from '../../components/TableComponent/TableComponent';
-import TableUserColumn from "../../components/TableComponent/TableUserNameColumn";
-import TableDateAdvtColumn from "../../components/TableComponent/TableDateAdvtColumn";
-import TableCountCoinColumn from "../../components/TableComponent/TableCountCoinColumn"; 
-import TableRateCoinColumn from "../../components/TableComponent/TableRateCoinColumn";
+import React, {useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import AuthContainer from "../Auth/Auth.container";
+import RenderComponent from "./components/Render.component";
+import {getUserMock} from "../../modulesStore/actions/user";
 
 const Main = (props) => {
-    const data = React.useMemo(
-        () => [
-          {
-            col1: 'Hello',
-            col2: 'World',
-            col3: 'lol',
-            col4: 'lol'
-          },
-          {
-            col1: 'react-table',
-            col2: 'rocks',
-            col3: 'lol',
-            col4: 'lol'
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
 
-          },
-          {
-            col1: 'whatever',
-            col2: 'you want',
-            col3: 'lol',
-            col4: 'lol'
-          },
-          {
-            col1: 'whatever',
-            col2: 'you want',
-            col3: 'lol'
+    useEffect(() => {
+        if (localStorage.getItem('userCoins')) {
+            getUserMock(dispatch, JSON.parse(localStorage.getItem('userCoins')));
+        }
+    }, []);
 
-          },
-        ],
-        []
-      )
-    const columns = React.useMemo(
-        () => [
-            {
-              Header: () => TableUserColumn(),
-              accessor: 'col1', // accessor is the "key" in the data
-            },
-            {
-              Header: () => TableDateAdvtColumn(),
-              accessor: 'col2',
-            },
-            {
-              Header: () => TableCountCoinColumn(),
-              accessor: 'col3',
-            },
-            {
-              Header: () => TableRateCoinColumn(),
-              accessor: 'col4',
-            },
-          ],
-          []
-      )
-    return (
-        <div className="main">
-            <Table columns={columns} data={data} />
-        </div>
-    )
+    if (!user?.id) {
+        return <AuthContainer/>
+    }
+
+    return <RenderComponent/>
 }
 
 export default Main;
