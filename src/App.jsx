@@ -38,7 +38,7 @@ function App(props) {
             <SplitLayout header={<PanelHeader separator={false}/>}>
                 <SplitCol spaced={viewWidth && viewWidth > ViewWidth.MOBILE}>
                     <Router>
-                        {user?.name ? <RouteTabs/> : null}
+                        {!user?.name ? <RouteTabs/> : null}
                         <Routes>
                             <Route path='/' element={<Main type='buy'/>}/>
                             <Route path='/sell' element={<Main type='sell'/>}/>
