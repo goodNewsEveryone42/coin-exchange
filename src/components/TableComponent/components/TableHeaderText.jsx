@@ -5,7 +5,7 @@ const TableHeaderText = (props) => {
     const { title } = props;
 
     return (
-        <Title level="3">{ title }</Title>
+        <Text color={"#919399"}>{ title }</Text>
     )
 }
 

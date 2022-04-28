@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Icon20ArrowUpOutline } from '@vkontakte/icons';
+import { Icon24ArrowUp, Icon24ArrowDownOutline } from '@vkontakte/icons';
 import {Card, Title, Text, Button, CellButton} from "@vkontakte/vkui";
 import styles from './TableComponent.module.scss';
 
 const TableHeaderFilter = (props) => {
-    const [isDown, isDownCheck] = useState(false);
+    const [isUp, isUpCheck] = useState(true);
     const { title } = props;
 
+    const getFilterData = () => {
+        isUpCheck(!isUp);
+    }
+
     return (
-            <CellButton color="black">
-                <Title level="3">
-                    { title }
-                </Title>
-                <Icon20ArrowUpOutline />
+            <CellButton centered after={isUp ? <Icon24ArrowUp fill={"#919399"}/> : <Icon24ArrowDownOutline fill={"#000000"}/>} onClick={ e => getFilterData() }>
+                { title } 
             </CellButton>
     )
 }

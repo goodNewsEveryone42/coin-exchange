@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Table from '../TableComponent/Table.component';
+import Table from "../TableComponent/Table.component";
 import TableHeader from "../TableComponent/TableHeader.component";
 import TableCell from "../TableComponent/TableCell.component";
+import styles from "./TableWrapper.module.scss";
 
 const TableWrapper = (props) => {
     const tableData = useSelector((state) => state.tableData.data);
@@ -46,7 +47,7 @@ const TableWrapper = (props) => {
           []
       )
     return (
-        <div className="main">
+        <div className={styles.tableWpapper}>
             <Table columns={columns} data={data} />
         </div>
     )
