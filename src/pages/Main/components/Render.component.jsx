@@ -3,7 +3,7 @@ import TableWrapper from '../../../components/TableWrapper';
 
 const RenderComponent = props => {
     return (
-        <TableWrapper />
+        <TableWrapper type={props.type}/>
     )
 }
 

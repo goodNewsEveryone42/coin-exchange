@@ -7,6 +7,14 @@ import styles from "./TableWrapper.module.scss";
 
 const TableWrapper = (props) => {
     const tableData = useSelector((state) => state.tableData.data);
+    const { type } = props;
+
+    const actionTitle = {
+      buy: 'Купить',
+      sell: 'Продать',
+      myOrder: 'Подтвердить покупку'
+    };
+
 
     const tableDataCell = tableData.map(item => {
         return {
@@ -14,12 +22,12 @@ const TableWrapper = (props) => {
             data: TableCell({component: 'TableCellData', data: {dataOpen: item.createDate}}),
             countCoin: TableCell({component: 'TableCellString', data: {countCoin: item.countCoin}}),
             rate: TableCell({component: 'TableCellString', data: {rate: item.rate}}),
-            action: TableCell({component: 'TableCellAction', data: {nameAction: 'Купить'}})
+            action: TableCell({component: 'TableCellAction', data: {nameAction: actionTitle[type]}})
         }
     });
     const data = React.useMemo(
         () => tableDataCell,
-        []
+        [type]
       )
     const columns = React.useMemo(
         () => [
@@ -32,7 +40,7 @@ const TableWrapper = (props) => {
               accessor: 'data',
             },
             {
-              Header: () => TableHeader({component: 'TableHeaderFilter', data: {title: 'Количество(койнов)'}}),
+              Header: () => TableHeader({component: 'TableHeaderFilter', data: {title: 'Количество(коинов)'}}),
               accessor: 'countCoin',
             },
             {

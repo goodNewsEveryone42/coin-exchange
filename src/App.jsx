@@ -39,7 +39,9 @@ function App(props) {
                     <Router>
                         {!user?.name ? <RouteTabs/> : null}
                         <Routes>
-                            <Route path='/' element={<Main/>}/>
+                            <Route path='/' element={<Main type='buy'/>}/>
+                            <Route path='/sell' element={<Main type='sell'/>}/>
+                            <Route path='/myOrder' element={<Main type='myOrder'/>}/>
                             <Route path='/create' element={<CreateOrderContainer/>}/>
                         </Routes>
                     </Router>

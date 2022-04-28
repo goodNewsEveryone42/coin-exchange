@@ -5,6 +5,7 @@ import RenderComponent from "./components/Render.component";
 import {getUserMock} from "../../modulesStore/actions/user";
 
 const Main = (props) => {
+
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ const Main = (props) => {
         return <AuthContainer/>
     }
 
-    return <RenderComponent/>
+    return <RenderComponent type={props.type}/>
 }
 
 export default Main;

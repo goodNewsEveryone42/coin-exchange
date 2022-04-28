@@ -14,6 +14,8 @@ const Table = ({ columns, data }) => {
         data,
       });
 
+      console.log(22)
+
       return (
         <table cellSpacing='0' className={styles.table} {...getTableProps()}>
           <thead>
