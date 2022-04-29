@@ -11,9 +11,6 @@ const RouteTabs = props => {
 
     const history = useNavigate();
 
-    if (!user?.id) {
-        return <AuthContainer/>
-    }
 
     return <div className={"tabsWrap"}>
         
