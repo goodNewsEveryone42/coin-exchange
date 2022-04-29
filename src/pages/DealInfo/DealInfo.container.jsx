@@ -28,7 +28,7 @@ const DealInfoContainer = props => {
     const handleStartDeal = () => {
         //dispatch(startDeal(mockUser));
         setStartDeal(true);
-        console.log(data)
+        console.log(deal);
     }
 
     useEffect(() => {
@@ -40,6 +40,7 @@ const DealInfoContainer = props => {
     }
 
     if(deal?.start) {
+        console.log(deal);
         return <div className='start-order'>
             <Card>
                 <DealStartComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit} handleStartDeal={handleStartDeal} resultPrice={resultPrice} deal={deal} data={data}/>
