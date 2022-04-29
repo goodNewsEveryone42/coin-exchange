@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Card, Title} from "@vkontakte/vkui";
 import FormComponent from "./components/Form.component";
 import SuccessComponent from "./components/Success.component";
+import RouteTabs from "../../components/RouteTabs";
 
 const CreateOrderContainer = props => {
     const [success, setSuccess] = useState(false);
@@ -29,15 +30,18 @@ const CreateOrderContainer = props => {
         setSuccess(false);
         setData(initialData);
     }
-    if(success){
+    if (success) {
         return <SuccessComponent handleClear={handleClear}/>
     }
 
-    return <div className='create-order'>
-        <Card>
-            <FormComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit} data={data}/>
-        </Card>
-    </div>
+    return <>
+        <RouteTabs/>
+        <div className='create-order'>
+            <Card>
+                <FormComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit} data={data}/>
+            </Card>
+        </div>
+    </>
 }
 
 export default CreateOrderContainer;

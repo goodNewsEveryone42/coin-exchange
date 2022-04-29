@@ -3,6 +3,7 @@ import {Button, Card, FormItem, Input, Select, Title} from "@vkontakte/vkui";
 import DealInfoComponent from "./components/DealInfo.component";
 import {useSelector} from "react-redux";
 import DealStartComponent from "./components/DealStart.component";
+import RouteTabs from "../../components/RouteTabs";
 
 const DealInfoContainer = props => {
     const [data, setData] = useState({
@@ -19,26 +20,31 @@ const DealInfoContainer = props => {
     }
 
     useEffect(() => {
-        setResultPrice(+data.quantity*+data.price)
+        setResultPrice(+data.quantity * +data.price)
     }, [data.quantity, data.price])
 
     const handleChangeData = (name, value) => {
         setData({...data, [name]: value});
     }
 
-    if(deal?.start) {
+    if (deal?.start) {
         return <div className='create-order'>
             <Card>
-                <DealStartComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}  resultPrice={resultPrice} deal={deal} data={data}/>
+                <DealStartComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}
+                                    resultPrice={resultPrice} deal={deal} data={data}/>
             </Card>
         </div>
     }
 
-    return <div className='create-order'>
-        <Card>
-            <DealInfoComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}  resultPrice={resultPrice} deal={deal} data={data}/>
-        </Card>
-    </div>
+    return <>
+        <RouteTabs/>
+        <div className='create-order'>
+            <Card>
+                <DealInfoComponent handleChangeData={handleChangeData} handleSubmit={handleSubmit}
+                                   resultPrice={resultPrice} deal={deal} data={data}/>
+            </Card>
+        </div>
+    </>
 }
 
 

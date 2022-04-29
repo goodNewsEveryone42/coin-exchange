@@ -1,6 +1,6 @@
 {
-  "homepage": "http://goodNewsEveryone42.github.io/coin-exchange",
-  "name": "coin-exchange",
+  "homepage":"http://172.27.73.179/app",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
