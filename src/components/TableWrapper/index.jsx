@@ -18,6 +18,7 @@ const TableWrapper = (props) => {
 
     const tableDataCell = tableData.map(item => {
         return {
+            type: item.type,
             user: TableCell({component: 'TableCellUser', data: {userName: item.userName}}),
             data: TableCell({component: 'TableCellData', data: {dataOpen: item.createDate}}),
             countCoin: TableCell({component: 'TableCellString', data: {countCoin: item.countCoin}}),
@@ -25,8 +26,10 @@ const TableWrapper = (props) => {
             action: TableCell({component: 'TableCellAction', data: {nameAction: actionTitle[type], type: type}})
         }
     });
+    const dataFilter = tableDataCell.filter(item => item.type === type);
+
     const data = React.useMemo(
-        () => tableDataCell,
+        () => dataFilter,
         [type]
       )
     const columns = React.useMemo(

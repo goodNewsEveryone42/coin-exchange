@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useTable } from 'react-table';
 import styles from '../TableComponent/Table.module.scss';
 
 const Table = ({ columns, data, type }) => {
+
     const {
         getTableProps,
         getTableBodyProps,

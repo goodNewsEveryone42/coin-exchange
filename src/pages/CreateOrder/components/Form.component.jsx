@@ -31,12 +31,12 @@ const FormComponent = props => {
         </FormItem>
         <FormItem top="Сумма коинов">
             <Input placeholder={'Введите число'} type='number' onChange={e => {
-                handleChangeData('quantity', e.target.value)
+                handleChangeData('countCoin', e.target.value)
             }}/>
         </FormItem>
         <FormItem top="Курс для обмена">
             <Input placeholder={'По какому курсу хотите купить'} type='number' onChange={e => {
-                handleChangeData('price', e.target.value)
+                handleChangeData('rate', e.target.value)
             }}/>
         </FormItem>
         <FormItem>
