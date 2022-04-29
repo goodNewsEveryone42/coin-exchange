@@ -20,6 +20,7 @@ import Main from "./pages/Main/Main.container";
 import RouteTabs from "./components/RouteTabs";
 import CreateOrderContainer from "./pages/CreateOrder/CreateOrder.container";
 import DealInfoContainer from "./pages/DealInfo/DealInfo.container";
+import DealStartComponent from './pages/DealInfo/components/DealStart.component';
 
 function App(props) {
     // const {store} = props;
@@ -45,6 +46,7 @@ function App(props) {
                             <Route path='/myOrder' element={<Main type='myOrder'/>}/>
                             <Route path='/create' element={<CreateOrderContainer/>}/>
                             <Route path='/deal' element={<DealInfoContainer/>}/>
+                            <Route path='/dealStart' element={<DealStartComponent/>}/>
                         </Routes>
                     </Router>
                 </SplitCol>

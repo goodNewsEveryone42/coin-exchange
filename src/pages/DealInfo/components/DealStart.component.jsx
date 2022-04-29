@@ -3,7 +3,6 @@ import DealInfoComponent from "./DealInfo.component";
 import {Button, FormItem, Input, Text, Title} from "@vkontakte/vkui";
 
 const DealStartComponent = props => {
-    return
         const {handleChangeData, handleSubmit, resultPrice, deal} = props;
 
         return <form onSubmit={e => {
