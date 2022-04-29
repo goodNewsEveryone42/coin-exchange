@@ -15,9 +15,9 @@ const Main = (props) => {
         }
     }, []);
 
-    if (!user?.id) {
-        return <AuthContainer/>
-    }
+    // if (!user?.id) {
+    //     return <AuthContainer/>
+    // }
 
     return <RenderComponent type={props.type}/>
 }

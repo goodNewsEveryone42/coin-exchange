@@ -56,7 +56,7 @@ const TableWrapper = (props) => {
       )
     return (
         <div className={styles.tableWpapper}>
-            <Table columns={columns} data={data} />
+            <Table columns={columns} data={data} type={type} />
         </div>
     )
 }
