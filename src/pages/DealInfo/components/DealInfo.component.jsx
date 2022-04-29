@@ -3,11 +3,12 @@ import {Button, FormItem, Input, Text, Title} from "@vkontakte/vkui";
 import "../style.scss"
 
 const DealInfoComponent = props => {
-    const {handleChangeData, handleSubmit, resultPrice, deal} = props;
+    const {handleChangeData, handleSubmit,handleStartDeal, resultPrice, deal} = props;
 
     return <form onSubmit={e => {
         e.preventDefault();
-        handleSubmit();
+        handleStartDeal();
+
     }}>
         <FormItem>
             <Title level={"2"}>{deal?.type === "buy"? "Покупка": "Продажа"} коинов у пользователя <b className={"NameUserDeal"}>{deal?.name}</b></Title>
