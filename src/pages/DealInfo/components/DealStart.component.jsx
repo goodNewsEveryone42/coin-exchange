@@ -1,11 +1,14 @@
 import React from 'react';
 import {Button, FormItem, Text, Title} from "@vkontakte/vkui";
+import { useNavigate } from 'react-router-dom';
 
 const DealStartComponent = props => {
         const {handleChangeData, handleSubmit, resultPrice, deal} = props;
     console.log(deal);
+    const history = useNavigate();
         return <form onSubmit={e => {
         e.preventDefault();
+            history('/');
     }}>
         <FormItem>
             <Title level={"2"}><b>Что дальше?</b></Title>
