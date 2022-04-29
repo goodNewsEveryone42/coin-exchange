@@ -2,7 +2,7 @@ import React from 'react';
 import { useTable } from 'react-table';
 import styles from '../TableComponent/Table.module.scss';
 
-const Table = ({ columns, data }) => {
+const Table = ({ columns, data, type }) => {
     const {
         getTableProps,
         getTableBodyProps,
@@ -13,9 +13,7 @@ const Table = ({ columns, data }) => {
         columns,
         data,
       });
-
-      console.log(22)
-
+console.log(type)
       return (
         <table cellSpacing='0' className={styles.table} {...getTableProps()}>
           <thead>

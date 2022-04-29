@@ -7,12 +7,13 @@ import {useSelector} from "react-redux";
 import AuthContainer from "../../pages/Auth/Auth.container";
 
 const RouteTabs = props => {
+    const user = useSelector((state) => state.user);
+
     const history = useNavigate();
-/*    const user = useSelector((state) => state.user);
-    if (!user?.id) {
-        return <></>
-    }*/
+
+
     return <div className={"tabsWrap"}>
+        
         <Tabs>
             <TabsItem
                 onClick={() => {
